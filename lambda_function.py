@@ -3,7 +3,7 @@ import boto3
 
 def lambda_handler(event, context):
     
-    location = event['CodePipeline.job'].data.inputArtifacts[0]
+    # location = event['CodePipeline.job'].data.inputArtifacts[0]
 
     layerzip = boto3.client('s3').get_object(Bucket='lambdalayersbuildbucket',Key='messageLibrary.zip')
     

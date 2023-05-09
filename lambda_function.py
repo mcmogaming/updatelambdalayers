@@ -5,7 +5,7 @@ def lambda_handler(event, context):
     
     # location = event['CodePipeline.job'].data.inputArtifacts[0]
 
-    layerzip = boto3.client('s3').get_object(Bucket='lambdalayersbuildbucket',Key='messageLibrary.zip')
+    layerzip = boto3.resource('s3').get_object(Bucket='lambdalayersbuildbucket',Key='messageLibrary.zip')
     
     # boto3.client.publish_layer_version(
     # LayerName='messageLibraryLayer',
